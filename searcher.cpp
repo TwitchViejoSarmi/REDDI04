@@ -19,7 +19,7 @@ void challenge(Problem problem, Searcher User) {
     }
 
     User.append(challenge);
-
+    cout << "Tu solucion ha sido registrada correctamente, revisa tu correo para leer la retroalimentacion de tu proyecto" << endl;
 }
 
 int searcher() {
@@ -46,12 +46,8 @@ int searcher() {
         cout<<"=========================================="<<endl;
 
         cout<<"[1] Consultar los retos disponibles."<<endl;
-        cout<<"[2] Consultar los retos que estas resolviendo."<<endl;
-        cout<<"[3] Aceptar un reto."<<endl;
-        cout<<"[4] Modificar un reto que estas resolviendo."<<endl;
-        cout<<"[5] Borrar un reto."<<endl;
-        cout<<"[6] Consultar comentarios."<<endl;
-        cout<<"[7] Cerrar sesion."<<endl;
+        cout<<"[2] Aceptar un reto."<<endl;
+        cout<<"[3] Cerrar sesion."<<endl;
         cout<<"Digite aqui: ";
         cin >> opc;
 
@@ -63,11 +59,6 @@ int searcher() {
                 break;
             case 2:
                 system("cls");
-                searchers.act_user.printJobs();
-                system("pause");
-                break;
-            case 3:
-                system("cls");
                 problems.printProblems();
                 int num;
                 cout << "Digite el numero del reto a aceptar: ";
@@ -75,6 +66,7 @@ int searcher() {
                 if (num - 1 >= 0 && num - 1 < sizeof(problems.GetProblems())) {
                     system("cls");
                     problems.GetProblems().at(num - 1).SetStatus(IN_REVIEW);
+
                     challenge(problems.GetProblems().at(num - 1), searchers.act_user);
                 }
                 else {
@@ -83,21 +75,9 @@ int searcher() {
                 
                 system("pause");
                 break;
-            case 4:
+            case 3:
                 system("cls");
-                system("pause");
-                break;
-            case 5:
-                system("cls");
-                system("pause");
-                break;
-            case 6:
-                system("cls");
-                system("pause");
-                break;
-            case 7:
-                system("cls");
-                cout<<"Sistema finalizado."<<endl;
+                cout<<"Sesion finalizada."<<endl;
                 system("pause");
                 break;
             default:
@@ -106,7 +86,7 @@ int searcher() {
                 system("pause");
                 break;
         }
-    }while(opc != 6);
+    }while(opc != 3);
 
     return 0;
 }
