@@ -1,4 +1,64 @@
 #include "libraries.h"
+class Days {
+    private:
+        string steps;
+        float subbudget;
+    public:
+        //Getter functions.
+        string GetSteps() {
+            return steps;
+        }
+        float GetSubbudget() {
+            return subbudget;
+        }
+
+        //Setter functions.
+        void SetSteps(string a) {
+            steps = a;
+        }
+        void SetSubbudget(float a) {
+            subbudget = a;
+        }              
+};
+
+class Solution {
+    private:
+        string title;
+        vector<Days> steps;
+    public:
+        //Getter functions.
+        string GetTitle() {
+            return title;
+        }
+        vector<Days> GetSteps() {
+            return steps;
+        }
+
+        //Setter functions.
+        void SetTitle(string a) {
+            title = a;
+        }
+        void SetSteps(vector<Days> a) {
+            steps = a;
+        }
+
+        void printSolution() {
+            cout << "------------------------------------------" << endl;
+            cout<< "Titulo del reto: " << title << endl;
+            for (int i = 0; i < sizeof(steps); i++) {
+                cout << "Mes " << i + 1 << ":" <<endl;
+                cout << steps[i].GetSteps() << endl;
+                cout << "Parte del presupuesto usado: $" << steps[i].GetSubbudget();
+            }
+            cout << "------------------------------------------" << endl;
+        }
+        void append(Days day) {
+            steps.push_back(day);
+        }
+        void reset() {
+            steps.clear();
+        }
+};
 
 class Searcher {
     private:
@@ -6,7 +66,7 @@ class Searcher {
         string password;
         string name;
         string role;
-        vector<Problem> jobs;
+        vector<Solution> jobs;
     public:
         //Getter functions.
         string GetUser() {
@@ -21,7 +81,7 @@ class Searcher {
         string GetRole() {
             return role;
         }
-        vector<Problem> GetJobs() {
+        vector<Solution> GetJobs() {
             return jobs;
         }
 
@@ -38,8 +98,20 @@ class Searcher {
         void SetRole(string a) {
             role = a;
         }
-        void SetJobs(vector<Problem> a) {
+        void SetJobs(vector<Solution> a) {
             jobs = a;
+        }
+
+        void append(Solution a) {
+            jobs.push_back(a);
+        }
+        void remove(int a) {
+            jobs.erase(jobs.begin() + (a - 1));
+        }
+        void printJobs() {
+            for (int i = 0; i < sizeof(jobs); i++) {
+                jobs[i].printSolution();
+            }
         }
 };
 
