@@ -1,4 +1,4 @@
-#include "libraries.h"
+#include "libraries.hpp"
 class Days {
     private:
         string steps;
@@ -66,9 +66,13 @@ class Searcher {
         string password;
         string name;
         string mail;
+        int xp;
         vector<Solution> jobs;
     public:
         //Getter functions.
+        int GetXp() {
+            return xp;
+        }
         string GetUser() {
             return name;
         }
@@ -86,6 +90,9 @@ class Searcher {
         }
 
         //Setter functions.
+        void SetXp(int a) {
+            xp = a;
+        }
         void SetUser(string a) {
             user = a;
         }
@@ -102,6 +109,9 @@ class Searcher {
             jobs = a;
         }
 
+        void addXP() {
+            xp += 100;
+        }
         void append(Solution a) {
             jobs.push_back(a);
         }

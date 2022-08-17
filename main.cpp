@@ -1,5 +1,5 @@
-#include "libraries.h"
-#include "searcher.h"
+#include "libraries.hpp"
+#include "searcher.hpp"
 
 int main() {
     int opc;

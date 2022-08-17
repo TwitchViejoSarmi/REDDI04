@@ -1,4 +1,4 @@
-#include "searcher.h"
+#include "searcher.hpp"
 void challenge(Problem problem, Searcher User) {
     Solution challenge;
     Days solperday;
