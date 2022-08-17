@@ -57,19 +57,22 @@ class Searchers {
             searchers = a;
         }
 
-        Searcher InSearchers(string user, string password, Searcher User) {
+        Searcher act_user;
+        bool InSearchers(string user, string password) {
             for (int i = 0; i < sizeof(searchers); i++) {
                 if (user == searchers[i].GetUser() && password == searchers[i].GetPassword()) {
-                    User = searchers[i];
+                    act_user = searchers[i];
                     cout<<"Sesion iniciada correctamente."<<endl;
                     system("pause");
-                    return User;
+                    return true;
                 }
             }
 
             cout<<"Error al acceder al sistema!"<<endl;
             system("pause");
-            return User;
+
+            
+            return false;
         }
 };
 
