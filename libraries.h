@@ -51,3 +51,18 @@ class Problem {
             status = a;
         }
 };
+
+class Problems {
+    private:
+        vector<Problem> problems;
+    public:
+        //Getter functions.
+        vector<Problem> GetProblems() {
+            return problems;
+        }
+
+        //Setter functions.
+        void SetSearchers(vector<Problem> a) {
+            problems = a;
+        }
+};
