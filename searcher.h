@@ -65,7 +65,7 @@ class Searcher {
         string user;
         string password;
         string name;
-        string role;
+        string mail;
         vector<Solution> jobs;
     public:
         //Getter functions.
@@ -78,8 +78,8 @@ class Searcher {
         string GetName() {
             return name;
         }
-        string GetRole() {
-            return role;
+        string GetMail() {
+            return mail;
         }
         vector<Solution> GetJobs() {
             return jobs;
@@ -95,8 +95,8 @@ class Searcher {
         void SetName(string a) {
             name = a;
         }
-        void SetRole(string a) {
-            role = a;
+        void SetMail(string a) {
+            mail = a;
         }
         void SetJobs(vector<Solution> a) {
             jobs = a;
